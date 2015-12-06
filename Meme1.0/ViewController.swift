@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var bottomTextFieldEdited = false
     
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBOutlet weak var shareMemeActivityButton: UIBarButtonItem!
@@ -167,8 +169,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func generateMemedImage() -> UIImage {
-        // hide tool bar
+        // hide tool bar and nav bar
         toolBar.hidden = true
+        navBar.hidden = true
         
         //Render view an image
         UIGraphicsBeginImageContext(view.frame.size)
@@ -177,6 +180,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         UIGraphicsEndImageContext()
         
         toolBar.hidden = false
+        navBar.hidden = false
         
         return memedImage
     }
