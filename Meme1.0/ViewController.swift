@@ -102,12 +102,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        if bottomTextField.isFirstResponder() {
+        if bottomTextField.isFirstResponder() && view.frame.origin.y == 0 {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(notification: NSNotification?) {
         view.frame.origin.y = 0
     }
     
@@ -123,8 +123,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
-
-
+    
     
     //MARK: Picking an image
     @IBAction func camerWasPicked(sender: AnyObject) {
@@ -202,7 +201,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     
-    //MARK: Action Options
+    //MARK: Font/Content Mode Options
     @IBAction func changeFont(sender: AnyObject) {
         let optionMenu = UIAlertController(title: nil, message: "Choose Font", preferredStyle: .ActionSheet)
         
