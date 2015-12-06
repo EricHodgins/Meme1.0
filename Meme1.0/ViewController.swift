@@ -83,12 +83,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             NSStrokeWidthAttributeName : -5.0
         ]
         
-        //topTextField.text = "TOP"
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .Center
         topTextField.adjustsFontSizeToFitWidth = true
         
-        //bottomTextField.text = "BOTTOM"
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = .Center
         bottomTextField.adjustsFontSizeToFitWidth = true
@@ -201,7 +199,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     
-    //MARK: Font/Content Mode Options
+    //MARK: Font & Content Mode Options
     @IBAction func changeFont(sender: AnyObject) {
         let optionMenu = UIAlertController(title: nil, message: "Choose Font", preferredStyle: .ActionSheet)
         
